@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * PAJ - MINIFY HTML
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the The MIT License (MIT)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://blog.gaiterjones.com/dropdev/magento/LICENSE.txt
+ *
+ * @category    PAJ
+ * @package     PAJ_MinifyHTML
+ * @copyright   Copyright (c) 2015 PAJ
+ * @license     http://blog.gaiterjones.com/dropdev/magento/LICENSE.txt  The MIT License (MIT)
+ */
+-->
+<config>
+    <sections>
+        <minifyhtml translate="label" module="minifyhtml">
+            <label>Minify HTML</label>
+            <tab>general</tab>
+            <sort_order>9000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+                <groups>
+					<general translate="label" module="minifyhtml">
+                    <label>General</label>
+                    <comment>
+                        <![CDATA[
+                            <div class="minify-html-notive">
+								<span>PAJ Minify HTML - v0.0.1 - 27.05.2015</span>
+                            </div>
+                        ]]>
+                    </comment>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <expanded>1</expanded>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+						<fields>
+							<enable_minify translate="label">
+								<label>Minify HTML:</label>
+								<frontend_type>select</frontend_type>
+								<source_model>adminhtml/system_config_source_yesno</source_model>
+								<sort_order>2</sort_order>
+								<show_in_default>1</show_in_default>
+								<show_in_website>1</show_in_website>
+								<show_in_store>1</show_in_store>
+								<comment>Enable / Disable</comment>
+							</enable_minify>							
+						</fields>						
+					</general>
+				</groups>
+        </minifyhtml>
+    </sections>
+ </config>

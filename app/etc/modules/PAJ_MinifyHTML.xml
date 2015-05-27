@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <PAJ_MinifyHTML>
+            <active>true</active>
+            <codePool>local</codePool>
+        </PAJ_MinifyHTML>
+    </modules>
+</config>

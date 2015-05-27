@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * PAJ - MINIFY HTML
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the The MIT License (MIT)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://blog.gaiterjones.com/dropdev/magento/LICENSE.txt
+ *
+ * @category    PAJ
+ * @package     PAJ_MinifyHTML
+ * @copyright   Copyright (c) 2015 PAJ
+ * @license     http://blog.gaiterjones.com/dropdev/magento/LICENSE.txt  The MIT License (MIT)
+ */
+-->
+<config>
+    <modules>
+        <PAJ_MinifyHTML>
+            <version>0.1.0</version>
+        </PAJ_MinifyHTML>
+    </modules>
+    <global>
+        <helpers>
+            <minifyhtml>
+                <class>PAJ_MinifyHTML_Helper</class>
+            </minifyhtml>
+        </helpers>
+        <models>
+            <minifyhtml>
+                <class>PAJ_MinifyHTML_Model</class>
+            </minifyhtml>
+        </models>
+		<events>
+			<http_response_send_before>
+				<observers>
+					<http_response_send_before_handler>
+						<type>model</type>
+						<class>minifyhtml/observer</class>
+						<method>alterOutput</method>
+						<args></args>
+					</http_response_send_before_handler>
+				</observers>
+			</http_response_send_before>
+		</events>		
+    </global>
+	<adminhtml>  
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <minifyhtml>
+                                            <title>Minify HTML</title>
+                                        </minifyhtml>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+	</adminhtml>	
+</config>
