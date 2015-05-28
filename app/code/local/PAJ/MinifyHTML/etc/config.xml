@@ -33,6 +33,8 @@
                 <class>PAJ_MinifyHTML_Model</class>
             </minifyhtml>
         </models>
+    </global>
+	<frontend>
 		<events>
 			<http_response_send_before>
 				<observers>
@@ -44,8 +46,8 @@
 					</http_response_send_before_handler>
 				</observers>
 			</http_response_send_before>
-		</events>		
-    </global>
+		</events>			
+	</frontend>	
 	<adminhtml>  
         <acl>
             <resources>

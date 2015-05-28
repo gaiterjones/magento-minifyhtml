@@ -17,31 +17,60 @@
 
 class PAJ_MinifyHTML_Model_Observer
 {
+	protected $_timerstart=false;
 	
     public function alterOutput($observer)
     {
-        //Retrieve html body
-        $response = $observer->getResponse();       
-        $html     = $response->getBody();
-
-		//Mage::log('PAJ_MinifyHTML_Model_Observer::observer');
-		//$html=$this->sanitize(PAJ_MinifyHTML_Model_Minify::minify($html,array('jsCleanComments' => true)));
+		//if (file_exists(Mage::getModuleDir('etc', 'Lesti_Fpc'))) {return;}
+		//if (Mage::helper('core')->isModuleEnabled('Lesti_Fpc')) {return;}
+		//Mage::log('PAJ_MinifyHTML_Model_Observer::observer '. time());
+		
+		
+		// retrieve html body
+		$response = $observer->getResponse();       
+		$html     = $response->getBody();
+		
+		// do not minify json
+		if(substr($html, 0, 1) === '{') { return; }
 		
 		if (Mage::helper('minifyhtml/data')->isActive())
 		{	
-			$html=PAJ_MinifyHTML_Model_Minify::minify($html,array('jsCleanComments' => true));
-		}
+			$this->timer();
+			$_timeStamp='';
+			
 		
-        //Send Response
-        $response->setBody($html);
+			// minify
+			$html=PAJ_MinifyHTML_Model_Minify::minify($html,array('jsCleanComments' => true));
+			$_timeStamp="\n".'<!-- +MIN '. date("d-m-Y H:i:s"). ' '. $this->timer(false). ' -->';
+			// send Response
+			$response->setBody($html.$_timeStamp);			
+		}
     }
 	
-	
-	// sanitize
-	// attempts to remove all newlines
-	// can screw up js
 	protected function sanitize($_html) {
 	   
 		return (preg_replace('#\R+#', ' ', $_html));
+	}
+
+	protected function timer($_start=true)
+	{
+		if ($_start)
+		{
+			// start
+			$time = microtime();
+			$time = explode(' ', $time);
+			$time = $time[1] + $time[0];
+			$this->_timerstart=$time;
+			
+		} else {
+			// stop
+			$time = microtime();
+			$time = explode(' ', $time);
+			$time = $time[1] + $time[0];
+			$finish = $time;
+			$total_time = round(($finish - $this->_timerstart), 4);
+			return ($total_time);
+		}
+	
 	}	
 }
