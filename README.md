@@ -20,6 +20,10 @@ The html is modified with the http_response_send_before event. The minified html
 	
 ### Installation
 
+modman
+modman clone https://github.com/gaiterjones/magento-minifyhtml
+
+manual
 Extract the module and copy the files to the /app folder of your magento installation. Refresh your cache, log out of admin and back in again.
 
 ### Configuration

@@ -57,9 +57,9 @@
                             <children>
                                 <config>
                                     <children>
-                                        <minifyhtml>
+                                        <minifyhtml_config>
                                             <title>Minify HTML</title>
-                                        </minifyhtml>
+                                        </minifyhtml_config>
                                     </children>
                                 </config>
                             </children>
@@ -68,5 +68,5 @@
                 </admin>
             </resources>
         </acl>
-	</adminhtml>	
+	</adminhtml>
 </config>
