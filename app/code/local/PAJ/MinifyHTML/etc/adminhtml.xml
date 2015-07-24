@@ -25,9 +25,9 @@
 						<children>
 							<config>
 								<children>
-									<minifyhtml_config>
+									<minifyhtml>
 										<title>Minify HTML</title>
-									</minifyhtml_config>
+									</minifyhtml>
 								</children>
 							</config>
 						</children>
