@@ -48,25 +48,4 @@
 			</http_response_send_before>
 		</events>			
 	</frontend>	
-	<adminhtml>  
-        <acl>
-            <resources>
-                <admin>
-                    <children>
-                        <system>
-                            <children>
-                                <config>
-                                    <children>
-                                        <minifyhtml_config>
-                                            <title>Minify HTML</title>
-                                        </minifyhtml_config>
-                                    </children>
-                                </config>
-                            </children>
-                        </system>
-                    </children>
-                </admin>
-            </resources>
-        </acl>
-	</adminhtml>
 </config>

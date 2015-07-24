@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * PAJ - MINIFY HTML
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the The MIT License (MIT)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://blog.gaiterjones.com/dropdev/magento/LICENSE.txt
+ *
+ * @category    PAJ
+ * @package     PAJ_MinifyHTML
+ * @copyright   Copyright (c) 2015 PAJ
+ * @license     http://blog.gaiterjones.com/dropdev/magento/LICENSE.txt  The MIT License (MIT)
+ */
+-->
+<config>
+	<adminhtml>  
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <minifyhtml_config>
+                                            <title>Minify HTML</title>
+                                        </minifyhtml_config>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+	</adminhtml>
+</config>
